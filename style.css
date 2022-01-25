@@ -1,11 +1,22 @@
 .container {
     display: flex;
     align-items: center;
+    width: 375px;
+    height: 375px;
+    flex-direction: column;
+    border: 1px solid black; 
+    background: grey;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    flex: 1;
+    width: 375px;
 }
 
 .grid-squares {
-    height: 10px;
-    width: 10px;
+    flex: 1 1 0%;
     background: aqua;
-    border: 2px solid darkslategray;
+    border: 1px solid black;    
 }
