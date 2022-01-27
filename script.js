@@ -1,4 +1,4 @@
-userInput = '5'
+
 const grid = document.getElementById('grid');
 
 function colorChange(e) {  
@@ -6,7 +6,9 @@ function colorChange(e) {
     e.stopPropagation();
 }
 
-function gridCreation (userInput) {
+function gridCreation () {
+    resetGrid();
+    let userInput = prompt("Please Enter Size of Grid less than 100");
     for (let i = 0; i < userInput; i++) {
         let row = document.createElement('div');
         row.id = 'row';
@@ -19,6 +21,19 @@ function gridCreation (userInput) {
             row.appendChild(div);
         }
     } 
-    let gridSquares = document.querySelectorAll('div');
-    gridSquares.forEach(div => div.addEventListener('click', colorChange));
+    let gridSquares = document.querySelectorAll('div.grid-squares');
+    gridSquares.forEach(div => div.addEventListener('mouseover', colorChange));
 }
+
+const resetButton = document.getElementById('reset-button');
+resetButton.addEventListener('click', resetGrid);
+
+function resetGrid() {
+    while (grid.hasChildNodes()) {
+        grid.removeChild(grid.firstChild);
+    }
+
+}
+
+const gridSizeButton = document.getElementById('grid-size');
+gridSizeButton.addEventListener('click', gridCreation);
