@@ -1,19 +1,10 @@
 userInput = '5'
 const grid = document.getElementById('grid');
-const gridSquares = document.querySelectorAll('div');
 
-function colorChange(e) {
-    
+function colorChange(e) {  
     this.style.backgroundColor = "black";
     e.stopPropagation();
-    console.log(this);
-    
 }
-
-gridSquares.forEach(div => div.addEventListener('click', colorChange, {
-    capture: false
-}));
-
 
 function gridCreation (userInput) {
     for (let i = 0; i < userInput; i++) {
@@ -27,8 +18,7 @@ function gridCreation (userInput) {
             div.className = 'grid-squares';
             row.appendChild(div);
         }
-    }  
+    } 
+    let gridSquares = document.querySelectorAll('div');
+    gridSquares.forEach(div => div.addEventListener('click', colorChange));
 }
-
-
-
