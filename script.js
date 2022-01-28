@@ -1,13 +1,20 @@
-
+// Get ElementById
 const grid = document.getElementById('grid');
+const gridSizeButton = document.getElementById('grid-size');
+const resetButton = document.getElementById('reset-button');
 
+// EventListners
+gridSizeButton.addEventListener('click', gridCreation);
+resetButton.addEventListener('click', gridColorReset);
+
+//Functions
 function colorChange(e) {  
     this.style.backgroundColor = "black";
     e.stopPropagation();
 }
 
 function gridCreation () {
-    resetGrid();
+    newGrid();
     let userInput = prompt("Please Enter Size of Grid less than 100");
     for (let i = 0; i < userInput; i++) {
         let row = document.createElement('div');
@@ -25,15 +32,13 @@ function gridCreation () {
     gridSquares.forEach(div => div.addEventListener('mouseover', colorChange));
 }
 
-const resetButton = document.getElementById('reset-button');
-resetButton.addEventListener('click', resetGrid);
-
-function resetGrid() {
+function newGrid() {
     while (grid.hasChildNodes()) {
         grid.removeChild(grid.firstChild);
     }
-
 }
 
-const gridSizeButton = document.getElementById('grid-size');
-gridSizeButton.addEventListener('click', gridCreation);
+function gridColorReset() {
+    let gridSquares = document.querySelectorAll('div.grid-squares');
+    gridSquares.forEach(div => div.style.backgroundColor = "black");
+}
