@@ -11,11 +11,21 @@
     <div class ="header">
         <div class="title">Etch-a-Sketch</div>
     </div>
-    <div class ="items">
-        <button class="btn" id="grid-size">Grid Size</button>
-        <button class="btn">Color</button>
-        <button class="btn">Background Color</button>
-        <button class="btn" id="reset-button">Reset</button>
+    <div class ="buttons">
+        <div class ="button-container">
+            <button class="btn" id="grid-size">Grid Size</button>
+        </div>
+        <div class ="button-container">
+            <button class="btn">Color</button>
+            <input type="color" id="grid-color" value="#000000">
+        </div>
+        <div class ="button-container">
+            <button class="btn">Background Color</button>
+            <input type="color" id="grid-background-color" value="#ffffff">
+        </div>
+        <div class ="button-container">
+            <button class="btn" id="reset-button">Reset</button>
+        </div>
     </div>
     <div class="container" id="grid">
 

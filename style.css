@@ -8,12 +8,23 @@ body {
     text-align: center;
 }
 
-.items {
+.buttons {
     display: flex;
     justify-content: space-evenly;
     margin-top: 10px;
     margin-bottom: 10px;
     column-gap: 17px;
+}
+
+.button-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.btn {
+    margin-bottom: 5px;
 }
 
 .container {
@@ -35,6 +46,6 @@ body {
 
 .grid-squares {
     flex: 1 1 0%;
-    background: aqua;
-    border: 1px solid black;    
+    background: #ffffff;
+    border: 1px solid rgba(0, 0, 0, 0.514);    
 }
