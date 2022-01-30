@@ -6,6 +6,9 @@ body {
 
 .title {
     text-align: center;
+    font-family: geneva;
+    font-weight: bolder;
+    font-size: larger;
 }
 
 .buttons {
@@ -23,8 +26,10 @@ body {
     justify-content: space-evenly;
 }
 
-.btn {
+.heading {
     margin-bottom: 5px;
+    font-family: geneva;
+    font-size: large;
 }
 
 .container {

@@ -15,7 +15,7 @@ const gridColorButton = document.getElementById('grid-color');
 const backgroundColorButton = document.getElementById('grid-background-color');
 
 // EventListners
-gridSizeButton.addEventListener('click', gridResize);
+gridSizeButton.addEventListener('input', gridResize);
 resetButton.addEventListener('click', gridColorReset);
 gridColorButton.addEventListener('input', (e) => gridSquareColor = e.target.value );
 backgroundColorButton.addEventListener('input', backgroundColorChange);
@@ -54,10 +54,11 @@ function newGrid() {
 function gridColorReset() {
     let gridSquares = document.querySelectorAll('div.grid-squares');
     gridSquares.forEach(div => div.style.backgroundColor = "rgb(255, 255, 255)");
+    gridSquares.forEach(div => div.id = 'grid-squares');
 }
 
-function gridResize () {
-    let size = prompt("Please Enter Size of Grid less than 100");
+function gridResize (e) {
+    let size = e.target.value;
     gridCreation(size);
 }
 
